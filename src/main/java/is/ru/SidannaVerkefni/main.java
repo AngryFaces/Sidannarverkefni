@@ -70,5 +70,5 @@ public class main {
 			System.out.print("Congratulations O, you won!");
 		else
 			System.out.print("Tie.");
-	}
+	}//Hallo
 }
