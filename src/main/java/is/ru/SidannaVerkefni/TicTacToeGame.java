@@ -1,13 +1,11 @@
-package is.ru.SidannaVerkefni;
-
 public class TicTacToeGame {
 	private char table[][] = new char[3][3];
 	
 	public TicTacToeGame(){
-	}
-
-	public TicTacToeGame(char[][] t){
-		table = t;
+		for(int i = 0; i<3; i++)
+			for(int j = 0; j<3; j++){
+				table[i][j] = ' ';
+			}
 	}
 	
 	public char[][] getTable(){
@@ -18,7 +16,7 @@ public class TicTacToeGame {
 		table = t;
 	}
 	
-	public boolean CheckWin(char playerSymbol) //PlayerSymbol = X or O
+	public boolean CheckWin(char playerSymbol) 
 	{
 		if(table[0][0] == playerSymbol && table[0][1] == playerSymbol && table[0][2] == playerSymbol) //Top Row
 			return true;
@@ -26,7 +24,7 @@ public class TicTacToeGame {
 			return true;
 		else if(table[2][0] == playerSymbol && table[2][1] == playerSymbol && table[2][2] == playerSymbol) //Bottom Row
 			return true;
-		else if(table[0][0] == playerSymbol && table[0][1] == playerSymbol && table[0][2] == playerSymbol) //Left Column
+		else if(table[0][0] == playerSymbol && table[1][0] == playerSymbol && table[2][0] == playerSymbol) //Left Column
 			return true;
 		else if(table[1][0] == playerSymbol && table[1][1] == playerSymbol && table[1][2] == playerSymbol) //middle Column
 			return true;
@@ -36,8 +34,8 @@ public class TicTacToeGame {
 			return true;
 		else if(table[0][2] == playerSymbol && table[1][1] == playerSymbol && table[2][0] == playerSymbol) //Right-To-Left diagonal line
 			return true;
-			
-		return false; //If no row or column has same character. then the game is no over.
+		else
+			return false; //If no row or column has same character. then the game is no over.
 	}
 	
 	public void addToGrid(char id, char mark) {
@@ -61,4 +59,29 @@ public class TicTacToeGame {
         	table[2][2] = mark;
     }
 	
+	public boolean addToTable(int cell, char mark)
+	{
+		int count = 1;
+		for(int i = 0; i<3; i++)
+			for(int j = 0; j<3; j++){
+				if(count == cell)
+					if(table[i][j] == ' '){
+						table[i][j] = mark;
+						return true;
+					}
+				count+= 1;
+			}
+		return false;
+	}
+	
+	public boolean tieGame()
+	{
+		for(int i = 0; i<3; i++)
+			for(int j = 0; j<3; j++){
+				if(table[i][j] == ' '){
+					return false;
+				}
+			}
+		return true;
+	}
 }
