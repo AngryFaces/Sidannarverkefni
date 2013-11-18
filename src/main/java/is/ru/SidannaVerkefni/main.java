@@ -34,25 +34,8 @@ public class main {
 			printTable();
 			System.out.print("Enter cell between 1-9: ");
 			input = sc.nextInt();
-			
-			if(game.getxTurn()){
-				if(game.addToTable(input,'X')){
-					game.setxTurn(false);
-				}
-				else{
-					game.setxTurn(true);
-					System.out.print("Error: Pick empty cell. \n");	
-				}
-				
-			}
-			else{
-				if(game.addToTable(input,'O'))
-					game.setxTurn(true);
-				else{
-					game.setxTurn(false);
-					System.out.print("Error: Pick empty cell. \n");	
-				}
-			}
+			if(!game.addToTable(input))
+				System.out.print("Error: pick empty cell. \n");
 		}
 		System.out.print(game.gameResult());
 	}
