@@ -1,3 +1,4 @@
+package is.ru.SidannaVerkefni;
 import java.io.*;
 import java.util.Scanner;
 

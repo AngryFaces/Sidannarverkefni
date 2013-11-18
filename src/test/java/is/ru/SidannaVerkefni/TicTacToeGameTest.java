@@ -5,6 +5,6 @@ public class TicTacToeGameTest{
 	@Test
 	public void createGame(){
 		TicTacToeGame newGame = new TicTacToeGame();
-		Assert.assertFalse(newGame.checkWin('X'));
+		Assert.assertFalse("Game not won by X" , newGame.checkWin('X'));
 	}
 }

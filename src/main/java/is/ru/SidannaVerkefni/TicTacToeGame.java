@@ -1,3 +1,4 @@
+package is.ru.SidannaVerkefni;
 public class TicTacToeGame {
 	private char table[][] = new char[3][3];
 	private boolean xTurn; //If xTurn = true, then it is X's turn. If it is false then it is O's turn.
