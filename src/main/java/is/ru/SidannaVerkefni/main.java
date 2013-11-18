@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class main {
 	static TicTacToeGame game = new TicTacToeGame();
-	static boolean xTurn = true;
 	
 	public static void printTable(){
 		char table[][] = game.getTable();
@@ -29,46 +28,31 @@ public class main {
 		Scanner sc = new Scanner(System.in);	
 		int input;
 
-		boolean xHasWon = false;
-		boolean oHasWon = false;
-		boolean gameTied = false;
-
-		while(!xHasWon && !oHasWon && !gameTied)
+		while(!game.isGameOver())
 		{
 			printTable();
 			System.out.print("Enter cell between 1-9: ");
 			input = sc.nextInt();
 			
-			if(xTurn){
+			if(game.getxTurn()){
 				if(game.addToTable(input,'X')){
-					xTurn = false;
+					game.setxTurn(false);
 				}
 				else{
-					xTurn = true;
+					game.setxTurn(true);
 					System.out.print("Error: Pick empty cell. \n");	
 				}
 				
 			}
 			else{
 				if(game.addToTable(input,'O'))
-					xTurn = true;
+					game.setxTurn(true);
 				else{
-					xTurn = false;
-					System.out.print("Error: Pick empty cell.");	
+					game.setxTurn(false);
+					System.out.print("Error: Pick empty cell. \n");	
 				}
 			}
-
-			xHasWon = game.CheckWin('X');
-			oHasWon = game.CheckWin('O');
-			gameTied = game.tieGame();
 		}
-
-		
-		if(game.CheckWin('X'))
-			System.out.print("Congratulations X, you won!");
-		else if(game.CheckWin('O'))
-			System.out.print("Congratulations O, you won!");
-		else
-			System.out.print("Tie.");
-	}//Hallo
+		System.out.print(game.gameResult());
+	}
 }

@@ -1,11 +1,14 @@
 public class TicTacToeGame {
 	private char table[][] = new char[3][3];
-	
+	private boolean xTurn; //If xTurn = true, then it is X's turn. If it is false then it is O's turn.
+
 	public TicTacToeGame(){
 		for(int i = 0; i<3; i++)
 			for(int j = 0; j<3; j++){
 				table[i][j] = ' ';
 			}
+
+		xTurn = true;
 	}
 	
 	public char[][] getTable(){
@@ -14,6 +17,14 @@ public class TicTacToeGame {
 	
 	public void setTable(char[][] t){
 		table = t;
+	}
+
+	public boolean getxTurn(){
+		return xTurn;
+	}
+
+	public void setxTurn(boolean turn){
+		xTurn = turn;
 	}
 	
 	public boolean CheckWin(char playerSymbol) 
@@ -83,5 +94,20 @@ public class TicTacToeGame {
 				}
 			}
 		return true;
+	}
+
+	public boolean isGameOver(){
+		if(CheckWin('X') || CheckWin('O') || tieGame())
+			return true;
+		return false;
+	}
+
+	public String gameResult(){
+		if(CheckWin('X'))
+			return "Congratulations X, you won!";
+		else if(CheckWin('O'))
+			return "Congratulations O, you won!";
+		else
+			return "Tie.";
 	}
 }
