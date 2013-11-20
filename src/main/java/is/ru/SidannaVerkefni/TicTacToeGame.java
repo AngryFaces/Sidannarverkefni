@@ -8,7 +8,6 @@ public class TicTacToeGame {
 			for(int j = 0; j<3; j++){
 				table[i][j] = ' ';
 			}
-
 		xTurn = true;
 	}
 	
