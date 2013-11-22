@@ -27,7 +27,7 @@ public class TicTacToeGame {
 		xTurn = turn;
 	}
 	
-	public boolean CheckWin(char playerSymbol) 
+	public boolean checkWin(char playerSymbol) 
 	{
 		if(table[0][0] == playerSymbol && table[0][1] == playerSymbol && table[0][2] == playerSymbol)//Top Row
 			return true;
