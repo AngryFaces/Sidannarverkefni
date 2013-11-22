@@ -1,9 +1,11 @@
 package is.ru.SidannaVerkefni;
+
 public class TicTacToeGame {
 	private char table[][] = new char[3][3];
 	private boolean xTurn; //If xTurn = true, then it is X's turn. If it is false then it is O's turn.
 
 	public TicTacToeGame(){
+
 		for(int i = 0; i<3; i++)
 			for(int j = 0; j<3; j++){
 				table[i][j] = ' ';
@@ -85,15 +87,15 @@ public class TicTacToeGame {
 	}
 
 	public boolean isGameOver(){
-		if(CheckWin('X') || CheckWin('O') || tieGame())
+		if(checkWin('X') || checkWin('O') || tieGame())
 			return true;
 		return false;
 	}
 
 	public String gameResult(){
-		if(CheckWin('X'))
+		if(checkWin('X'))
 			return "Congratulations X, you won!";
-		else if(CheckWin('O'))
+		else if(checkWin('O'))
 			return "Congratulations O, you won!";
 		else
 			return "Tie.";
