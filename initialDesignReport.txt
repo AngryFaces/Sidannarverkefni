@@ -1,0 +1,29 @@
+Design Report
+
+Our initial design included one TicTacToe class, that has all the functions needed to build the game and play it, this was supposed to be console based,
+but we moved from our initial design and decided to try and implement a web based implementation of TicTacToe, so therefore we also added a spark class that uses our
+TicTacToe class and sends the information to the javascript we have, and this script edits the HTML, so to summarize we have: HTTP<->javascript->spark->java.
+
+//NOTE: This is the console version.
+TicTacToe.java:
+	public TicTacToeGame()  // The constructor
+	public char[][] getTable() // get-function for our game table
+	public void setTable(char[][] t) // set-function for our game table
+	public boolean getxTurn() // returns true or false depending on whose turn it is
+	public void setxTurn(boolean turn) // sets user turn
+	public boolean checkWin(char playerSymbol) // Checks if the table has a winning combination for said playersymbol
+	public boolean addToTable(int cell) // Adds the corresponding player symbol to said cell
+	public boolean tieGame() // Checks for a tie
+	public boolean isGameOver() // Checks if the game is over.
+	public String gameResult() // returns output for the game result.
+
+main.java
+//NOTE: This class has an instance of TicTacToe.java as its property, called game.
+	Main() //Pseudo code for our main function.
+	  While the game is not over://This line checks if the game is over in each iteration
+	       game.checkIfGameOver() //Checks if a tie or a winning combination is found.
+		PrintTable()
+		Input() //Gather the user input.
+		game.AddToTable(input) //Add the input to the table.
+	Print (game.gameResult())
+
