@@ -34,7 +34,7 @@
       			<manifest>
       				<addClasspath>true</addClasspath>
       				<classpathPrefix>lib/</classpathPrefix>
-          			<mainClass>is.ru.main</mainClass>
+          			<mainClass>is.ru.SidannaVerkefni.main</mainClass>
       			</manifest>
     			</archive>
      			</configuration>
