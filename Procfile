@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* is.ru.SidannarVerkefni.spark
+web:    java -cp target/classes:target/dependency/* is.ru.SidannaVerkefni.spark
