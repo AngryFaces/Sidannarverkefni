@@ -34,7 +34,7 @@
             var cellID = $(this).attr('id');
             $.ajax({
             type: "POST",
-            url: ("/addToTable"),
+            url: "/addToTable",
             data: cellID,
             success: function(cellID) {
                 alert(cellID)
