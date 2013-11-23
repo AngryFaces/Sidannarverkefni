@@ -1,8 +1,7 @@
 package is.ru.SidannaVerkefni;
 import java.io.*;
 import java.util.Scanner;
-import static spark.Spark.*;
-import spark.*;
+
 
 public class main {
 	static TicTacToeGame game = new TicTacToeGame();
