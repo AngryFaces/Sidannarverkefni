@@ -31,16 +31,9 @@
     <script>
       $(document).ready(function(){
         $("td").click(function(){
-            var cellID = $(this).attr('id');
-            $.ajax({
-            type: "POST",
-            url: ("/addToTable"),
-            data: cellID,
-            success: function(cellID) {
-                alert(cellID)
-              }
-            });
-          });
+          var cellID = $(this).attr('id');
+          alert(cellID);
+        });
       });
     </script>
     
