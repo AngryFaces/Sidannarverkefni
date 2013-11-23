@@ -28,6 +28,8 @@ public class main {
 	}
 	
 	public static void main(String[] args){
+		staticFileLocation("/public");        
+        setPort(Integer.valueOf(System.getenv("PORT")));
 		Scanner sc = new Scanner(System.in);	
 		int input;
 
