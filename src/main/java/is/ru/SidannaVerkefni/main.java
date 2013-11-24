@@ -38,6 +38,7 @@ public class main {
 			if(!game.addToTable(input))
 				System.out.print("Error: pick empty cell. \n");
 		}
+		printTable();
 		System.out.print(game.gameResult());
 	}
 }

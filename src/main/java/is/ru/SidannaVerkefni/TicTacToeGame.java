@@ -94,10 +94,10 @@ public class TicTacToeGame {
 
 	public String gameResult(){
 		if(checkWin('X'))
-			return "Congratulations X, you won!";
+			return "Congratulations X, you won!\n";
 		else if(checkWin('O'))
-			return "Congratulations O, you won!";
+			return "Congratulations O, you won!\n";
 		else
-			return "Tie.";
+			return "Tie.\n";
 	}
 }
