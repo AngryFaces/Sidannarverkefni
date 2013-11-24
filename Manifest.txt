@@ -1,0 +1,2 @@
+Main-Class: is.ru.SidannaVerkefni.main
+
